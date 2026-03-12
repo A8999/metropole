@@ -1,20 +1,88 @@
 <!DOCTYPE html>
-<html lang="ukr">
+<html lang="uk">
 <head>
   <meta charset="utf-8">
   <meta name="author" content="A8999">
-  <meta mane="date"  content="17.02.2026">
-  <title>Меню</title>
+  <meta name="date" content="2026-02-17">
+  <title>Metropole — Меню</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body style="background-color:#77A1A6;">
-  <h1 align=center
-  style="font-family: verdana;
-  color:white"
-  >Меню ресторану</h1>
-  <ul>
-    <li>Закуски</li>
-    <li>Основні страви</li>
-    <li>Десерти</li>
-  </ul>
+<body class="menu-page">
+  <header>
+    <h1 class="site-title">Меню</h1>
+    <nav class="main-nav" aria-label="Навігація">
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="menu.html">Меню</a></li>
+        <li><a href="gallery.html">Галерея</a></li>
+        <li><a href="contact.html">Контакти</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <table class="menu-table" aria-label="Основне меню ресторану">
+      <colgroup>
+        <col class="menu-col-name">
+        <col class="menu-col-desc">
+        <col class="menu-col-price">
+      </colgroup>
+      <thead>
+        <tr>
+          <th class="menu-title" colspan="3">Авторське меню від шефа</th>
+        </tr>
+        <tr>
+          <th>Назва страви</th>
+          <th>Опис</th>
+          <th>Ціна</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">Стейки</td>
+          <td class="desc">Підкопчений, яловичий стейк. Подається з печеними овочами та соусом демі-глас.</td>
+          <td class="price">475 грн / 350 г</td>
+        </tr>
+        <tr>
+          <td class="desc">Стейк з перцевим соусом. Подається з картопляним пюре та карамелізованою цибулею.</td>
+          <td class="price">480 грн / 360 г</td>
+        </tr>
+        <tr>
+          <td>Паста</td>
+          <td class="desc">Паста карбонара з панчеттою, вершковим соусом, яйцем і пармезаном, прикрашена свіжим базиліком.</td>
+          <td class="price">320 грн / 250 г</td>
+        </tr>
+        <tr>
+          <td>Цезар</td>
+          <td class="desc">Салат Цезар з куркою — хрусткі крутони, пармезан, часниковий соус і маринована куряча грудинка.</td>
+          <td class="price">250 грн / 180 г</td>
+        </tr>
+        <tr>
+          <td>Десерт</td>
+          <td class="desc">Тірамісу домашнього приготування з маскарпоне і кавовим просоченням.</td>
+          <td class="price">180 грн / 120 г</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Популярні страви ресторану</h3>
+    <ol>
+      <li>Стейк</li>
+      <li>Паста</li>
+      <li>Салат Цезар</li>
+      <li>Тірамісу</li>
+    </ol>
+
+    <h3>Категорії меню</h3>
+    <ul style="list-style-type: square;">
+      <li>Супи</li>
+      <li>Гарячі страви</li>
+      <li>Салати</li>
+      <li>Десерти</li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>© Metropole 2026</p>
+  </footer>
 </body>
 </html>

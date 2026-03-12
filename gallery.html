@@ -1,15 +1,150 @@
 <!DOCTYPE html>
-<html lang="ukr">
+<html lang="uk">
 <head>
   <meta charset="utf-8">
   <meta name="author" content="A8999">
-  <meta mane="date"  content="17.02.2026">
-  <title>Галерея</title>
+  <meta name="description" content="Галерея ресторану Metropole — інтер'єри, страви, напої, зали">
+  <title>Metropole — Галерея</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body style="background-color: #456e73;">
-  <h1 align=center 
-  style="font-family: verdana;
-  color:white" 
-  >Фотографії інтерʼєру та страв ресторану</h1>
+<body class="gallery-page">
+  <header>
+    <h1 class="site-title">Галерея</h1>
+    <nav class="main-nav" aria-label="Навігація">
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="menu.html">Меню</a></li>
+        <li><a href="gallery.html" aria-current="page">Галерея</a></li>
+        <li><a href="contact.html">Контакти</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="gallery-main" role="main">
+    <section class="gallery-intro" aria-labelledby="gallery-title">
+      <h2 id="gallery-title">Фотографії інтер'єру, залів, напоїв та авторських страв</h2>
+      <p>Нижче — підбірка найяскравіших фото Metropole. Клікніть на зображення, щоб відкрити його у повному розмірі.</p>
+    </section>
+    <section aria-labelledby="gallery-caption">
+      <table class="gallery-table" aria-label="Галерея Metropole">
+        <!-- 1 -->
+        <tr>
+          <td class="text-cell">
+            <h3>Банкетна зала</h3>
+            <p><strong>Вміщає до 120 гостей — ідеальна для весіль і корпоративів.</strong></p>
+          </td>
+          <td class="img-cell">
+            <figure class="img-card">
+              <a href="img/gallery1.jpg" target="_blank" rel="noopener">
+                <img src="img/gallery1.jpg" alt="Банкетна зала — Metropole">
+              </a>
+            </figure>
+          </td>
+        </tr>
+        <!-- 2 -->
+      <tr>
+          <td class="img-cell">
+            <figure class="img-card">
+              <a href="img/gallery8.jpg" target="_blank" rel="noopener">
+                <img src="img/gallery8.jpg" alt="Тераса — Metropole">
+              </a>
+            </figure>
+          </td>
+          <td class="text-cell">
+            <h3>Тераса</h3>
+            <p><strong>Літня тераса з видом на історичну частину міста — ідеальна для теплих вечорів.</strong></p>
+          </td>
+        </tr>
+        <!-- 3 -->
+        <tr>
+          <td class="text-cell">
+            <h3>Винна кімната</h3>
+            <p><strong>Колекція понад 200 етикеток для дегустацій і приватних заходів.</strong></p>
+          </td>
+          <td class="img-cell">
+            <figure class="img-card">
+              <a href="img/gallery3.jpg" target="_blank" rel="noopener">
+                <img src="img/gallery3.jpg" alt="Винна кімната — Metropole">
+              </a>
+            </figure>
+          </td>
+        </tr>
+        <!-- 4 -->
+        <tr>
+          <td class="img-cell">
+            <figure class="img-card">
+              <a href="img/gallery4.jpg" target="_blank" rel="noopener">
+                <img src="img/gallery4.jpg" alt="Коктейль — Metropole">
+              </a>
+            </figure>
+          </td>
+          <td class="text-cell">
+            <h3>Коктейльна карта</h3>
+            <p><strong>Сезонні авторські коктейлі з натуральними інгредієнтами.</strong></p>
+          </td>
+        </tr>
+        <!-- 5 -->
+        <tr>
+          <td class="text-cell">
+            <h3>Інтер'єр лаунжу</h3>
+            <p><strong>Затишні куточки для вечірнього відпочинку і невеликих компаній.</strong></p>
+          </td>
+          <td class="img-cell">
+            <figure class="img-card">
+              <a href="img/gallery5.jpg" target="_blank" rel="noopener">
+                <img src="img/gallery5.jpg" alt="Інтер'єр лаунжу — Metropole">
+              </a>
+            </figure>
+          </td>
+        </tr>
+        <!-- 6 -->
+        <tr>
+          <td class="img-cell">
+            <figure class="img-card">
+              <a href="img/gallery6.jpg" target="_blank" rel="noopener">
+                <img src="img/gallery6.jpg" alt="Десерт — Metropole">
+              </a>
+            </figure>
+          </td>
+          <td class="text-cell">
+            <h3>Крафтові Десерти</h3>
+            <p><strong>Ніжні десерти власного виробництва — ідеальне завершення вечірі.</strong></p>
+          </td>
+        </tr>
+        <!-- 7 -->
+        <tr>
+          <td class="text-cell">
+            <h3>Шеф-Кухар</h3>
+            <p><strong>Відкрита кухня — спостерігайте за процесом приготування.</strong></p>
+          </td>
+          <td class="img-cell">
+            <figure class="img-card">
+              <a href="img/gallery7.jpg" target="_blank" rel="noopener">
+                <img src="img/gallery7.jpg" alt="Шеф на кухні — Metropole">
+              </a>
+            </figure>
+          </td>
+        </tr>
+        <!-- 8 -->
+       <tr>
+          <td class="img-cell">
+            <figure class="img-card">
+              <a href="img/gallery2.jpg" target="_blank" rel="noopener">
+                <img src="img/gallery2.jpg" alt="Паста карбонара — Metropole">
+              </a>
+            </figure>
+          </td>
+          <td class="text-cell">
+            <h3>Паста карбонара</h3>
+            <p><strong>Класична паста з панчеттою, вершковим соусом та пармезаном.</strong></p>
+          </td>
+        </tr>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Metropole 2026</p>
+  </footer>
 </body>
 </html>
