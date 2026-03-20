@@ -200,11 +200,6 @@ body.gallery-page .text-cell p { color: #a09999; } /*Текст галереї *
     bottom: 20px;
   }
 }
-
-body {
-    background-color: var(--bg-900); /* Основний колір фону */
-}
-
 /*нумерований список*/
 ol {
     margin: 20px 0;
@@ -216,7 +211,7 @@ ol {
 ol li {
     margin-bottom: 8px;
     font-style: italic;
-    color: var(--warm); /* Колір номерів та тексту */
+    color: var(--warm);
 }
 
 /* Список визначень */
@@ -244,4 +239,25 @@ dd {
 /* марк списки*/
 ul {
     list-style-type: square;
+}
+
+body {
+  background-color: var(--bg-900);
+}
+
+h2 {
+  font-family: 'Georgia', serif;
+  letter-spacing: 2px;
+}
+
+.site-title {
+  text-transform: uppercase;
+}
+
+#about {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 5px solid var(--warm);   
+  padding: 25px;                       
+  margin-top: 30px;                      
+  border-radius: 0 15px 15px 0;          
 }
