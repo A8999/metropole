@@ -245,40 +245,106 @@ body.gallery-page .text-cell p { color: #e0e0e0; }
     margin-top: 20px;
   }
 }
-/* 1. КОНТЕКСТНІ СЕЛЕКТОРИ (будь-яка вкладеність) */
-/* Вибираємо всі параграфи всередині секцій головного контенту */
+
 main section p {
     color: var(--text);
     opacity: 0.9;
 }
 
-/* 2. ДОЧІРНІ СЕЛЕКТОРИ (тільки прямий нащадок) */
-/* Стилізуємо заголовок, який є ПРЯМИМ «дитиною» хедеру */
 header > .site-title {
     border-bottom: 2px dashed rgba(240, 224, 4, 0.89);
     display: inline-block;
     padding-bottom: 5px;
 }
 
-/* Тільки список <ul>, що є прямим нащадком навігації */
 .main-nav > ul {
     border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 10px;
     border-radius: 12px;
 }
 
-/* 3. СУСІДНІ СЕЛЕКТОРИ (елемент одразу після іншого) */
-/* Ваша ідея: перший абзац одразу після заголовка в контактах */
-.contact-info h2 + p {
-    margin-top: 30px;
-    font-weight: 700;
-    color: var(--warm);
-    font-size: 1.1rem;
-}
-
-/* У списку команди: опис (dd), що йде одразу за ім'ям (dt) */
 dt + dd {
     font-style: italic;
     margin-bottom: 20px;
     color: var(--warm);
+}
+
+/* =========================================
+   ЛАБОРАТОРНА РОБОТА: ПОЗИЦІОНУВАННЯ ТА ПСЕВДОЕЛЕМЕНТИ
+   ========================================= */
+
+/* --- 1. Float (Плаваючий блок) --- */
+.promo-box {
+    float: right;
+    width: 220px;
+    background: rgba(217, 159, 126, 0.15);
+    border: 2px dashed var(--warm);
+    padding: 15px;
+    margin: 10px 0 15px 20px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    color: #b85a2a;
+}
+
+/* --- 2. Span (Рядковий елемент) --- */
+.brand-name {
+    color: #b85a2a;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- 3. Position (Бейдж Новинка) --- */
+.menu-table td.desc {
+    position: relative; /* База для абсолютного позиціонування */
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Щоб меню було поверх іншого контенту */
+}
+
+.badge-new {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #323250; /* Темний фон */
+    color: #ff4d4d; /* Яскраво-червоний текст */
+    padding: 2px 8px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: 0 0 0 8px;
+    text-transform: uppercase;
+}
+
+/* --- 4. Псевдокласи для посилань (LVHA) --- */
+.wiki-link:link { color: darkred; text-decoration: underline; }
+.wiki-link:visited { color: #5a0000; }
+.wiki-link:hover { color: #ff0000; text-decoration: none; background: rgba(0,0,0,0.05); }
+.wiki-link:active { color: orange; }
+
+/* --- 5. Псевдоклас :first-child --- */
+#about p:first-child {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #323250;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-bottom: 10px;
+}
+
+/* --- 6. Псевдоелементи :before --- */
+.contact-phone::before { content: "📞 "; }
+.contact-email::before { content: "✉️ "; }
+.contact-address::before { content: "📍 "; }
+
+/* :after для декоративної лінії під заголовками */
+h2::after {
+    content: "";
+    display: block;
+    width: 1060px;
+    height: 3px;
+    background: var(--warm);
+    margin: 8px 0 15px 0;
 }
