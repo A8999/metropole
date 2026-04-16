@@ -269,11 +269,7 @@ dt + dd {
     color: var(--warm);
 }
 
-/* =========================================
-   ЛАБОРАТОРНА РОБОТА: ПОЗИЦІОНУВАННЯ ТА ПСЕВДОЕЛЕМЕНТИ
-   ========================================= */
-
-/* --- 1. Float (Плаваючий блок) --- */
+/* ПлавБлок */
 .promo-box {
     float: right;
     width: 220px;
@@ -287,7 +283,7 @@ dt + dd {
     color: #b85a2a;
 }
 
-/* --- 2. Span (Рядковий елемент) --- */
+/* Span */
 .brand-name {
     color: #b85a2a;
     font-weight: 800;
@@ -295,23 +291,21 @@ dt + dd {
     letter-spacing: 1px;
 }
 
-/* --- 3. Position (Бейдж Новинка) --- */
 .menu-table td.desc {
-    position: relative; /* База для абсолютного позиціонування */
+    position: relative; 
 }
 
 header {
     position: sticky;
     top: 0;
-    z-index: 1000; /* Щоб меню було поверх іншого контенту */
-}
+    z-index: 1000; }
 
 .badge-new {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: #323250; /* Темний фон */
-    color: #ff4d4d; /* Яскраво-червоний текст */
+    background-color: #323250; 
+    color: #ff4d4d;
     padding: 2px 8px;
     font-size: 0.7rem;
     font-weight: bold;
@@ -319,13 +313,11 @@ header {
     text-transform: uppercase;
 }
 
-/* --- 4. Псевдокласи для посилань (LVHA) --- */
 .wiki-link:link { color: darkred; text-decoration: underline; }
 .wiki-link:visited { color: #5a0000; }
 .wiki-link:hover { color: #ff0000; text-decoration: none; background: rgba(0,0,0,0.05); }
 .wiki-link:active { color: orange; }
 
-/* --- 5. Псевдоклас :first-child --- */
 #about p:first-child {
     font-size: 1.2rem;
     line-height: 1.8;
@@ -334,17 +326,32 @@ header {
     padding-bottom: 10px;
 }
 
-/* --- 6. Псевдоелементи :before --- */
 .contact-phone::before { content: "📞 "; }
 .contact-email::before { content: "✉️ "; }
 .contact-address::before { content: "📍 "; }
 
-/* :after для декоративної лінії під заголовками */
-h2::after {
-    content: "";
-    display: block;
-    width: 1060px;
-    height: 3px;
-    background: var(--warm);
-    margin: 8px 0 15px 0;
+/* --- (ЛАБОРАТОРНА) --- */
+
+/* Клас для зміни фону через setTimeout */
+.promo-bg {
+    background: #6f4877 !important; /* золотавий відтінок */
+    transition: background 1s ease;
+}
+
+/* Блок "Жива музика" */
+.live-music-alert {
+    background: rgba(217, 159, 126, 0.2);
+    color: var(--warm);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+    border: 1px dashed var(--warm);
+}
+
+/* Виділення цін у меню */
+.highlight-price {
+    color: #b85a2a;
+    font-weight: 900;
+    font-size: 1.1rem;
 }
