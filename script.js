@@ -1,18 +1,12 @@
-// ==========================================
-// ЧАСТИНА 1: ЛОГІКА ТА ФУНКЦІЇ
-// ==========================================
 
-// Функція 1: Діалог з користувачем (while, if/else)
 function bookingDialogue() {
     let count;
-    // Цикл працюватиме, поки користувач не введе число більше 0
     while (true) {
         count = prompt("На скільки осіб ви бажаєте забронювати столик? (Введіть число)", "2");
         if (count !== null && count > 0 && !isNaN(count)) break;
         alert("Будь ласка, введіть коректне число осіб.");
     }
 
-    // Розгалуження для вибору зони
     if (count <= 2) {
         alert("Чудово! Для " + count + " осіб ми пропонуємо затишний столик біля вікна.");
     } else if (count <= 5) {
@@ -22,8 +16,7 @@ function bookingDialogue() {
     }
 }
 
-// Функція 2: Інформація про розробника (з параметром за замовчуванням)
-function showDevInfo(lastName, firstName, position = "FrontEnd Developer") {
+function showDevInfo(lastName, firstName, position ) {
     console.log("--- Інформація про розробника ---");
     console.log("Прізвище: " + lastName);
     console.log("Ім'я: " + firstName);
@@ -31,7 +24,6 @@ function showDevInfo(lastName, firstName, position = "FrontEnd Developer") {
     alert(`Розробник: ${lastName} ${firstName}\nПосада: ${position}`);
 }
 
-// Функція 3: Порівняння рядків
 function compareDishes(str1, str2) {
     if (str1.length > str2.length) {
         alert("Довша назва: " + str1);
@@ -42,25 +34,14 @@ function compareDishes(str1, str2) {
     }
 }
 
-// === ВИКЛИКИ ФУНКЦІЙ ===
-// Запускаємо діалог (можна закоментувати, якщо набридає при кожному оновленні)
-bookingDialogue(); 
+//bookingDialogue(); 
 
-// Виклик інформації про розробника (тут підстав свої дані)
-showDevInfo("A8999", "Ssss"); 
+//showDevInfo("A8999", "Ssss"); 
 
-// Виклик порівняння рядків
-compareDishes("Стейк з перцевим соусом", "Тірамісу");
+//compareDishes("Стейк з перцевим соусом", "Тірамісу");
 
-
-// ==========================================
-// ЧАСТИНА 2: РОБОТА З DOM ТА BOM
-// ==========================================
-
-// Використовуємо DOMContentLoaded, щоб JS працював тільки після завантаження всього HTML
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. BOM (location): Перенаправлення
     const footer = document.querySelector("footer");
     if (footer) {
         const tgButton = document.createElement("button");
@@ -68,67 +49,51 @@ document.addEventListener("DOMContentLoaded", () => {
         tgButton.style.cssText = "margin-left: 15px; padding: 5px 15px; background: var(--warm); border: none; border-radius: 5px; cursor: pointer; color: #fff;";
         
         tgButton.onclick = () => {
-            // Використання об'єкта location
             window.location.href = "https://t.me/telegram"; 
         };
         footer.append(tgButton);
     }
 
-    // 2. getElementById / querySelectorAll
-    const aboutSection = document.getElementById("about"); // Шукаємо за ID
-    const prices = document.querySelectorAll(".price");    // Шукаємо за класом
-
-    // Додаємо стилі всім цінам (спрацює на сторінці Меню)
+    const aboutSection = document.getElementById("about");
+    const prices = document.querySelectorAll(".price");
+    
     prices.forEach(price => {
         price.classList.add("highlight-price");
     });
 
-    // 3. innerHTML / textContent
     const promoBox = document.querySelector(".promo-box");
     if (promoBox) {
-        // textContent - безпечна зміна тексту без тегів
         promoBox.textContent = "Доброго дня! Знижка 10% на перше замовлення!";
     }
 
-    // 4. outerHTML
     const brandSpan = document.querySelector(".brand-name");
     if (brandSpan) {
-        // outerHTML - повністю замінює сам тег <span> на <strong> з новим стилем
         brandSpan.outerHTML = "<strong class='brand-name' style='color: gold; font-size: 1.1em;'>Metropole Premium</strong>";
     }
 
-    // 5. createElement + append
     const popularList = document.querySelector("ol"); 
     if (popularList) {
         const newDish = document.createElement("li");
         newDish.textContent = "Борщ з пампушками";
-        // append - додає в самий кінець списку
         popularList.append(newDish);
     }
 
-    // 6. prepend
     if (aboutSection) {
         const liveMusicNode = document.createElement("div");
         liveMusicNode.className = "live-music-alert";
-        // innerHTML - дозволяє вставити рядок разом з HTML-тегами
-        liveMusicNode.innerHTML = "🎵 <strong>Увага:</strong> Сьогодні жива музика о 19:00!";
-        // prepend - вставляє на самий початок контейнера
+        liveMusicNode.innerHTML = "<strong>Увага:</strong> Сьогодні жива музика о 19:00!";
         aboutSection.prepend(liveMusicNode);
     }
 
-    // 7. after
     const mapContainer = document.querySelector(".map-container"); 
     if (mapContainer) {
         const parkingInfo = document.createElement("p");
         parkingInfo.textContent = "Для наших гостей працює безкоштовна парковка у дворі.";
         parkingInfo.style.textAlign = "center";
         parkingInfo.style.color = "var(--warm)";
-        // after - вставляє елемент ПІСЛЯ вказаного блоку (не всередину нього)
         mapContainer.after(parkingInfo);
     }
 
-    // 8. replaceWith
-    // Шукаємо комірку, яка містить слово "Тірамісу"
     const tdElements = Array.from(document.querySelectorAll("td"));
     const tiramisuItem = tdElements.find(td => td.textContent.includes("Тірамісу"));
     
@@ -137,22 +102,112 @@ document.addEventListener("DOMContentLoaded", () => {
         outOfStock.textContent = "Тірамісу (Тимчасово відсутнє)";
         outOfStock.style.color = "red";
         outOfStock.style.textDecoration = "line-through";
-        // replaceWith - замінює старий вузол на новий
         tiramisuItem.replaceWith(outOfStock);
     }
 
-    // 9. remove
     if (promoBox) {
         setTimeout(() => {
-            // remove - повністю видаляє елемент з HTML-дерева через 10 секунд
             promoBox.remove(); 
         }, 10000);
     }
 
-    // 10. nodeValue / data
-    const copyrightText = document.querySelector("footer p");
-    if (copyrightText && copyrightText.firstChild) {
-        // nodeValue звертається не до тегу <p>, а саме до текстового вузла всередині нього
-        copyrightText.firstChild.nodeValue = `© Metropole ${new Date().getFullYear()} | Лабораторна робота`;
+});
+
+// =======================================================
+// ЛАБОРАТОРНА РОБОТА: ПОДІЇ ТА ДЕЛЕГУВАННЯ
+// =======================================================
+
+// ЗАВДАННЯ 1: ПОДІЇ МИШІ ТА ОБРОБНИКИ
+// 1.1. Обробник через атрибут (викликається з HTML: onclick="inlineLogoClick()")
+function inlineLogoClick() {
+    console.log("Клік по лого атрибут");
+}
+
+const logo = document.getElementById("main-logo");
+if (logo) {
+    // 1.2. Призначення обробника через властивість
+    logo.onmouseenter = function() {
+        console.log("Наведено мишу властивість");
+    };
+
+    // 1.3. Використання addEventListener (різні обробники на одну подію)
+    const handlerOne = () => console.log("Обробник атрибут");
+    const handlerTwo = () => console.log("Обробник властивість");
+    
+    logo.addEventListener("click", handlerOne);
+    logo.addEventListener("click", handlerTwo);
+
+    // 1.4. Об'єкт як обробник події (метод handleEvent) + event.currentTarget
+    const logoObjectHandler = {
+        handleEvent(event) {
+            console.log(`ЗАВДАННЯ 1: Об'єкт-обробник спрацював на подію: ${event.type}`);
+            console.log("Елемент (currentTarget):", event.currentTarget);
+            // Змінюємо колір логотипа при подвійному кліку
+            event.currentTarget.style.color = "gold";
+        }
+    };
+    
+    // Призначаємо об'єкт на подію "dblclick" (подвійний клік)
+    logo.addEventListener("dblclick", logoObjectHandler);
+
+    // 1.5. Видалення об'єкта-обробника через removeEventListener
+    const removeBtn = document.getElementById("remove-listener-btn");
+    if (removeBtn) {
+        removeBtn.addEventListener("click", () => {
+            logo.removeEventListener("dblclick", logoObjectHandler);
+            logo.style.color = ""; // Скидаємо колір
+            alert("Об'єкт-обробник подвійного кліку видалено!");
+        });
+    }
+}
+
+
+// ЗАВДАННЯ 2: ДЕЛЕГУВАННЯ ТА ПОВЕДІНКА
+// 2.1. Делегування подій на списку (підсвічування)
+const popList = document.getElementById("popular-dishes-list");
+if (popList) {
+    // Вішаємо ОДИН обробник на весь <ol>, а не на кожен <li>
+    popList.addEventListener("click", function(event) {
+        // Перевіряємо, чи клік був саме по тегу LI
+        if (event.target.tagName === "LI") {
+            // Знімаємо клас у всіх дочірніх елементів (скидаємо попередній вибір)
+            Array.from(popList.children).forEach(li => li.classList.remove("selected-item"));
+            // Додаємо клас підсвічування елементу, по якому клікнули (event.target)
+            event.target.classList.add("selected-item");
+        }
+    });
+}
+
+// 2.2. Меню кнопок та один обробник через data-* атрибути
+const tableControls = document.getElementById("table-controls");
+if (tableControls) {
+    // Об'єкт з методами, які відповідають значенням data-action
+    const menuActions = {
+        hidePrices() {
+            document.querySelectorAll(".price").forEach(p => p.style.opacity = "0");
+        },
+        showPrices() {
+            document.querySelectorAll(".price").forEach(p => p.style.opacity = "1");
+        }
+    };
+
+    // Делегування на контейнер з кнопками
+    tableControls.addEventListener("click", (event) => {
+        const actionName = event.target.dataset.action; // Зчитуємо data-action
+        if (actionName && menuActions[actionName]) {
+            menuActions[actionName](); // Викликаємо відповідний метод
+        }
+    });
+}
+
+// 2.3. Патерн "Поведінка" (Behavior) через data-behavior
+document.addEventListener("click", (event) => {
+    const element = event.target;
+    // Якщо у елемента, по якому клікнули, є атрибут data-behavior="counter"
+    if (element.dataset.behavior === "counter") {
+        let clicks = parseInt(element.dataset.clicks); // Зчитуємо поточне значення
+        clicks++;                                      // Збільшуємо
+        element.dataset.clicks = clicks;               // Записуємо назад в атрибут
+        element.textContent = `Кліків: ${clicks}`;     // Оновлюємо текст
     }
 });

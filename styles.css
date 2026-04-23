@@ -330,15 +330,12 @@ header {
 .contact-email::before { content: "✉️ "; }
 .contact-address::before { content: "📍 "; }
 
-/* --- (ЛАБОРАТОРНА) --- */
-
 /* Клас для зміни фону через setTimeout */
 .promo-bg {
-    background: #6f4877 !important; /* золотавий відтінок */
+    background: #6f4877 !important;
     transition: background 1s ease;
 }
 
-/* Блок "Жива музика" */
 .live-music-alert {
     background: rgba(217, 159, 126, 0.2);
     color: var(--warm);
@@ -349,9 +346,31 @@ header {
     border: 1px dashed var(--warm);
 }
 
-/* Виділення цін у меню */
 .highlight-price {
-    color: #b85a2a;
     font-weight: 900;
     font-size: 1.1rem;
+}
+
+/* --- СТИЛІ ДЛЯ ЛАБОРАТОРНОЇ РОБОТИ (ПОДІЇ) --- */
+
+/* Клас для підсвічування обраного елемента списку */
+.selected-item {
+    background-color: var(--warm);
+    color: #fff !important;
+    font-weight: bold;
+    padding: 2px 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+#lab-tasks button, #table-controls button {
+    cursor: pointer;
+    background: #323250;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+#lab-tasks button:hover, #table-controls button:hover {
+    background: var(--warm);
 }

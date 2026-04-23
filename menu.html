@@ -21,6 +21,10 @@
   </header>
 
   <main>
+    <div id="table-controls" style="margin-bottom: 15px; text-align: center;">
+        <button data-action="hidePrices">Сховати ціни</button>
+        <button data-action="showPrices">Показати ціни</button>
+    </div>
     <table class="menu-table">
       <colgroup>
         <col class="menu-col-name">
@@ -84,13 +88,14 @@
   <dt><b>Дмитро Лисенко</b></dt>
   <dd>Головний бармен. 9 років досвіду роботи з авторськими коктейлями та класичними напоями.</dd>
     </dl>
-    <h3>Популярні страви ресторану</h3>
-    <ol>
-      <li>Борщ</li>
-      <li>Паста</li>
-      <li>Салат Індонезійський</li>
-      <li>Тірамісу</li>
-    </ol>
+
+<h3>Популярні страви ресторану</h3>
+<ol id="popular-dishes-list">
+    <li>Борщ</li>
+    <li>Паста</li>
+    <li>Салат Індонезійський</li>
+    <li>Тірамісу</li>
+</ol>
 
     <h3>Інфраструктура</h3>
     <ul>
@@ -103,5 +108,8 @@
   <footer>
     <p>© Metropole 2026</p>
   </footer>
+  </script>
+  <script src="script.js">
+</script>
 </body>
 </html>
