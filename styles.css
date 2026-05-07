@@ -351,9 +351,6 @@ header {
     font-size: 1.1rem;
 }
 
-/* --- СТИЛІ ДЛЯ ЛАБОРАТОРНОЇ РОБОТИ (ПОДІЇ) --- */
-
-/* Клас для підсвічування обраного елемента списку */
 .selected-item {
     background-color: var(--warm);
     color: #fff !important;

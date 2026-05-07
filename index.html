@@ -44,31 +44,11 @@
         </p>
     </section>
 </main>
-<section id="lab-tasks" style="text-align: center; margin: 20px 0;">
-    <button id="remove-listener-btn" style="padding: 5px 15px; margin-right: 10px;">Вимкнути подвійний клік</button>
-    <button data-behavior="counter" data-clicks="0" style="padding: 5px 15px;">Кліків: 0</button>
-</section>
 <footer>
     <p>© Metropole 2026</p>
-</footer>
-<script>
-    const isAdult = confirm("Натисніть 'OK', якщо вам 18 років або більше, щоб отримати доступ до повного меню та акцій. Якщо ні, натисніть 'Скасувати' для перегляду дитячого меню та спеціальних пропозицій.");
-    if (isAdult) {
-        const userName = prompt("Як до вас звертатися?", "Гість");
-        alert("Вітаємо в Metropole, " + userName + "!");
-    } else {
-        alert("Замість шкідливого алкоголю пропонуємо наші авторські лимонади та крафтові десерти.");
-    }
+  </footer>
 
-    document.body.classList.add('promo-bg');
-    setTimeout(() => {
-        document.body.classList.remove('promo-bg');
-    }, 30000);
-
-    document.write("<p style='text-align:center; color:#77A1A6; font-size: 0.85rem; margin-top: 20px;'>Дата: " + new Date().toLocaleDateString() + "</p>");
-</script>
-<script src="script.js">
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
 
